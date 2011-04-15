@@ -10,7 +10,7 @@ Fork the latest source from github.
 
 Call `getLogger(name)` with the name of your class, namespace, or made up identifier.
 
-Loggers expose `fine()`, `info()`, `warn()`, `error()` and `log(level, args)`.
+Loggers expose `fine()`, `info()`, `warn()`, `error()` and `log(level, args)`.  These logging methods take variable arguments and will call `sys.inspect` on any objects that are passed.  There is special handling for Error objects.
 
     var logging = require('logging');
     
@@ -27,7 +27,7 @@ Loggers are arranged in a hierarchy based on their names, separated by dots.  Lo
     var d = logging.getLogger('project.subproject.bam');
     
     logging.getLogger('project.subproject').setLogLevel(logging.Level.SEVERE);
-    
+
 Every logger can have watchers associated with it, which will get called with a log record.  Usually you'd just want to attach to root logger.
 
     logging.registerWatcher(function(logRecord) {
