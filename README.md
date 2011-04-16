@@ -10,7 +10,7 @@ Fork the latest source from github.
 
 Call `getLogger(name)` with the name of your class, namespace, or made up identifier.
 
-Loggers expose `fine()`, `info()`, `warn()`, `error()` and `log(level, args)`.
+Loggers expose `fine()`, `info()`, `warn()`, `error()` and `log(level, args)`.  These logging methods take variable arguments and will call `sys.inspect` on any objects that are passed.  There is special handling for Error objects.
 
     var logging = require('logging');
     
@@ -19,7 +19,7 @@ Loggers expose `fine()`, `info()`, `warn()`, `error()` and `log(level, args)`.
     logger.info('This will not show up');
     logger.warn('But warnings will', new Error('aargg')); 
 
-Loggers are arranged in a hierarchy based on their names, separated by `.`.  Log reporting levels are inherited based on the hierarchy, INFO being the default level.  For example, the following will silence everything but errors from within `subproject`:
+Loggers are arranged in a hierarchy based on their names, separated by dots.  Log reporting levels are inherited based on the hierarchy, INFO being the default level.  For example, the following will silence everything but errors within the `subproject` namespace:
 
     var a = logging.getLogger('project.subproject.foo');
     var b = logging.getLogger('project.subproject.bar');
@@ -27,7 +27,7 @@ Loggers are arranged in a hierarchy based on their names, separated by `.`.  Log
     var d = logging.getLogger('project.subproject.bam');
     
     logging.getLogger('project.subproject').setLogLevel(logging.Level.SEVERE);
-    
+
 Every logger can have watchers associated with it, which will get called with a log record.  Usually you'd just want to attach to root logger.
 
     logging.registerWatcher(function(logRecord) {
@@ -35,4 +35,4 @@ Every logger can have watchers associated with it, which will get called with a 
       fs.writeFileSync('logs.log', JSON.stringify(logRecord) + '\n');
     });
 
-A default watcher is included which outputs to the console.
+A default watcher is automatically registered which outputs to the console.
