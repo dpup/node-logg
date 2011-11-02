@@ -1,18 +1,18 @@
 {
-  "name" : "logging",
+  "name" : "logg",
   "version" : "0.1.0",
   "description" : "Logging library that allows for hierarchical loggers, multiple log levels, and flexible watching of log records.",
   "keywords" : ["log", "logging", "logger", "hierarchical", "handler", "watcher"],
   "repository" : {
     "type" : "git",
-    "url" : "http://github.com/dpup/node-logging.git"
+    "url" : "http://github.com/dpup/node-logg.git"
   },
-  "homepage" : "https://github.com/dpup/node-logging",
+  "homepage" : "https://github.com/dpup/node-logg",
   "author" : {
     "name" : "Daniel Pupius",
     "email" : "dan@pupi.us",
     "url" : "http://pupius.co.uk"
   },
-  "main" : "./lib/logging.js",
+  "main" : "./lib/logg.js",
   "directories": {"lib": "./lib"}
 }
