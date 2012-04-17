@@ -16,7 +16,7 @@ Call `getLogger(name)` with the name of your class, namespace, or made up identi
 
 Loggers expose `fine()`, `info()`, `warn()`, `error()` and `log(level, args)`.  These logging methods take variable arguments and will call `sys.inspect` on any objects that are passed.  There is special handling for Error objects.
 
-    var logging = require('logging');
+    var logging = require('logg');
     
     var logger = logging.getLogger('my.class);
     logger.setLogLevel(logging.Level.WARN);
