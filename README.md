@@ -6,6 +6,10 @@ This is a logging library for use with [node.js](http://nodejs.org/).  It decoup
 
 Fork the latest source from github.
 
+or
+
+`npm install logg`
+
 ## Usage
 
 Call `getLogger(name)` with the name of your class, namespace, or made up identifier.
