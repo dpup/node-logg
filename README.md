@@ -18,7 +18,7 @@ Loggers expose `fine()`, `info()`, `warn()`, `error()` and `log(level, args)`.  
 
     var logging = require('logg');
     
-    var logger = logging.getLogger('my.class);
+    var logger = logging.getLogger('my.class');
     logger.setLogLevel(logging.Level.WARN);
     logger.info('This will not show up');
     logger.warn('But warnings will', new Error('aargg')); 
