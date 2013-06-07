@@ -1,6 +1,6 @@
 {
   "name" : "logg",
-  "version" : "0.2.0",
+  "version" : "0.2.1",
   "description" : "Logging library that allows for hierarchical loggers, multiple log levels, and flexible watching of log records.",
   "keywords" : ["log", "logging", "logger", "hierarchical", "handler", "watcher"],
   "repository" : {
