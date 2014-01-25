@@ -13,6 +13,9 @@
     "email" : "dan@pupi.us",
     "url" : "http://pupius.co.uk"
   },
+  "dependencies" : {
+    "json-stringify-safe": "5.0.0"
+  },
   "main" : "./lib/logg.js",
   "directories": {"lib": "./lib"}
 }
